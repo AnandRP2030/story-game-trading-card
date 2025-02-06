@@ -1,3 +1,4 @@
+import { Filter } from "lucide-react";
 import { Card } from "../Card/Card";
 import styles from "./Terminal.module.scss";
 export const Terminal = () => {
@@ -82,14 +83,21 @@ export const Terminal = () => {
       entry: "0.000007 - 0.0000075",
       stopLoss: "0.00000234 BTC (-20.83)",
     },
- 
   ];
 
   return (
     <div className={styles.terminal}>
-      {data.map((item, index) => {
-        return <Card item={item} key={index} />;
-      })}
+      <div className={styles.filters}>
+        <button>
+          <Filter size={14} />
+          <span>Filters</span>
+        </button>
+      </div>
+      <div className={styles.cardContainer}>
+        {data.map((item, index) => {
+          return <Card item={item} key={index} />;
+        })}
+      </div>
     </div>
   );
 };

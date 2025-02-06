@@ -2,10 +2,40 @@
     background:linear-gradient(to bottom, #04303d, #000000 80%);
     min-height: 100vh;
     width: 100%;
-    padding:50px 10%;
+    padding:30px 7%;
     box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    .filters {
+        display: flex;
+        justify-content: end;
+        margin-bottom: 10px;
+        button {
+            background-color: rgb(18, 17, 17);
+            color: white;
+            border: none;
+            padding: 5px 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            span {
+                margin-left: 5px;
+            }
+        }
+    }
+    
+
+    .cardContainer {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+        @media  (max-width: 1200px) {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        @media  (max-width: 1000px) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        @media  (max-width: 768px) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+    }
     
 }

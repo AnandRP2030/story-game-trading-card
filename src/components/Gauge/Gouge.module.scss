@@ -1,5 +1,4 @@
 .gauge {
-    max-width: 200px;
     position: relative;
     p {
         position: relative;
@@ -7,7 +6,6 @@
         left: 8px;
     }
     .logo {
-        position: absolute;
         display: flex;
         width: 100%;
         justify-content: center;
