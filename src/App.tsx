@@ -1,10 +1,11 @@
 import './App.css'
+import { Terminal } from './components/Terminal/terminal'
 
 function App() {
 
   return (
    <>
-    <h1>test </h1>
+    <Terminal />
    </>
   )
 }

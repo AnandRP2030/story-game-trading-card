@@ -1,0 +1,11 @@
+.terminal {
+    background:linear-gradient(to bottom, #04303d, #000000 80%);
+    min-height: 100vh;
+    width: 100%;
+    padding:50px 10%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    
+}
