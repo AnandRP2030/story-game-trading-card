@@ -1,13 +1,12 @@
-import './App.css'
-import { Terminal } from './components/Terminal/terminal'
+import "./App.css";
+import { Terminal } from "./components/Terminal/Terminal";
 
 function App() {
-
   return (
-   <>
-    <Terminal />
-   </>
-  )
+    <>
+      <Terminal />
+    </>
+  );
 }
 
-export default App
+export default App;

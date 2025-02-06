@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import "./styles/global.scss";
+import "swiper/swiper-bundle.min.css"
+import "swiper/swiper-bundle.css";
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
