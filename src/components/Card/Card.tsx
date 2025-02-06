@@ -1,6 +1,6 @@
 import styles from "./Card.module.scss";
 import { Bookmark } from "lucide-react";
-import Logo from "../../assets/edex-logo.png";
+import { MyGauge } from "../Gauge/Gauge";
 type Item = {
   createdOn: String;
   currentPrice: String;
@@ -44,7 +44,11 @@ export const Card = ({ item }: CardProps) => {
           <p>Time Frame: {timeFrame}</p>
         </div>
         <div>
-          <button>Long </button>
+          {timeFrame === "long" ? (
+            <button className={styles.longBtn}>Long </button>
+          ) : (
+            <button className={styles.shortBtn}>Short </button>
+          )}
         </div>
       </div>
 
@@ -60,11 +64,11 @@ export const Card = ({ item }: CardProps) => {
       </div>
 
       <div className={styles.guage}>
-        <div className={styles.guageChart}>Targets: char there</div>
+        {/* <div className={styles.guageChart}>
+        </div> */}
+          <MyGauge />
 
-        <div>
-          <img src={Logo} alt="logo" />
-        </div>
+      
       </div>
     </div>
   );
