@@ -1,6 +1,5 @@
 import styles from "./Gouge.module.scss";
 import { GaugeComponent } from "react-gauge-component";
-
 import Logo from "../../assets/edex-logo.png";
 export const MyGauge = () => {
   return (

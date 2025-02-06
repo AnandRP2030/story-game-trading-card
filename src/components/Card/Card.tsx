@@ -62,13 +62,8 @@ export const Card = ({ item }: CardProps) => {
           <span>{stopLoss}</span>
         </div>
       </div>
-
       <div className={styles.guage}>
-        {/* <div className={styles.guageChart}>
-        </div> */}
           <MyGauge />
-
-      
       </div>
     </div>
   );
