@@ -1,7 +1,23 @@
 import { Filter } from "lucide-react";
 import { Card } from "../Card/Card";
 import styles from "./Terminal.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { useEffect, useState } from "react";
+
 export const Terminal = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const data = [
     {
       createdOn: "Sep 9, 2022 | 3:31:53 PM",
@@ -93,11 +109,23 @@ export const Terminal = () => {
           <span>Filters</span>
         </button>
       </div>
-      <div className={styles.cardContainer}>
-        {data.map((item, index) => {
-          return <Card item={item} key={index} />;
-        })}
-      </div>
+      {isMobile ? (
+        <Swiper loop>
+          {data.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <Card item={item} />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      ) : (
+        <div className={styles.cardContainer}>
+          {data.map((item, index) => {
+            return <Card item={item} key={index} />;
+          })}
+        </div>
+      )}
     </div>
   );
 };

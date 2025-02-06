@@ -8,7 +8,9 @@
     padding-top: 8px;
     box-sizing: border-box;
     background-color: #002029;
-    
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
     p{
         margin: 0;
     }
